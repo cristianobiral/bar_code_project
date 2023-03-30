@@ -1,0 +1,41 @@
+<mvc:View controllerName="barcodeproject.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <FlexBox id="filterBox" justifyContent="Center">
+                <Input id="search" />
+                <Button id="searchButton" text="Search" press="onPressSeach" />
+            </FlexBox>
+
+            <VBox id="products">
+                <ObjectHeader 
+                    id="itemHeader"
+                    title="{products>/product/product_name}"
+                    number="{products>/product/quantity}">
+                    <ObjectAttribute 
+                        id="itemBarCode" 
+                        title="Bar Code" 
+                        text="{products>/code}" />
+                    <ObjectAttribute 
+                        id="itemMark" 
+                        title="Brands" 
+                        text="{products>/product/brands}" />
+                </ObjectHeader>
+
+                <Panel id="productInformations" headerText="Informations">
+                    <content>
+                        <HBox>
+                            <Image src="{products>/product/image_front_url}" />
+                            <VBox>
+                                <ObjectAttribute 
+                                    title="Category" 
+                                    text="{products>/product/escoscore_extended_}" />
+                            </VBox>
+                        </HBox>
+                    </content>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
