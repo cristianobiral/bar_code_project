@@ -26,11 +26,20 @@
                 <Panel id="productInformations" headerText="Informations">
                     <content>
                         <HBox>
-                            <Image src="{products>/product/image_front_url}" />
+                            <Image 
+                                src="{products>/product/image_front_url}"
+                                width="5em"
+                                press="onClickImage" />
                             <VBox>
                                 <ObjectAttribute 
-                                    title="Category" 
-                                    text="{products>/product/escoscore_extended_}" />
+                                    title="Categories" 
+                                    text="{products>/product/categories}" />
+                                <ObjectAttribute 
+                                    title="Warnings" 
+                                    text="{products>/product/escoscore_extended_data/impact/warnings}" />
+                                <ObjectAttribute 
+                                    title="Manufacturing Places" 
+                                    text="{products>/product/manufacturing_places}" />
                             </VBox>
                         </HBox>
                     </content>
